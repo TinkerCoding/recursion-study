@@ -98,3 +98,13 @@ var sumBelow = function(n) {
     };
   };
 };
+
+// 6. Get the integers within a range (x, y).
+// range(2,9); // [3,4,5,6,7,8]
+var range = function(x, y, r = []) {
+  const step = x > y? -1 : 1;
+  if(x === y) return [];
+  if(x === y - step) return r;
+  return r.concat(x + step, range(x + step, y));
+}
+console.log(range(2,9));

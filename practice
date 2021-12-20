@@ -108,3 +108,19 @@ var range = function(x, y, r = []) {
   return r.concat(x + step, range(x + step, y));
 }
 console.log(range(2,9));
+
+
+// 7. Compute the exponent of a number.
+// The exponent of a number says how many times the base number is used as a factor.
+// 8^2 = 8 x 8 = 64. Here, 8 is the base and 2 is the exponent.
+// exponent(4,3); // 64
+// https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
+let exponent = function ( base, exp ) {
+  // base case
+  if ( exp === 0 ) {
+      return 1;
+  }
+
+  // recursive cases!
+  return exp > 0 ? base * exponent( base, exp - 1 ) : 1 / ( base * exponent( base, -1 * exp - 1 ) );
+};
